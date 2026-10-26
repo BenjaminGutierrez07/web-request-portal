@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script defer src="./supabase-client.js"></script>
+    <script defer src="./submit-request.js"></script>
+</head>
+<body>
+        <header>
+            <h2>Web Request Portal</h2>
+            <nav class="nav-bar">
+                <a href="index.html">Home</a>
+                <a href="submit-request.html">Subir Solicitud</a>
+                <a href="login.html">Login</a>
+            </nav>
+        </header>
+
+        <main class="submit-content">
+            <section>
+                <h1>Realiza tu Solicitud</h1>
+                <p>Por favor, completa el siguiente formulario para enviar tu solicitud:</p>
+            </section>
+            <form id="request-form" class="form-section">
+            <label for="full_name">Nombre Completo</label>
+            <input type="text" id="full_name" name="full_name"
+                   placeholder="Ingresa tu nombre completo"
+                   required minlength="2" maxlength="100">
+
+            <label for="whatsapp">Numero de WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp"
+                   placeholder="Ingresa tu numero de WhatsApp"
+                   required minlength="6" maxlength="20">
+
+            <label for="barrio">Selecione su Barrio</label>
+            <select id="barrio" name="barrio" required>
+                <option value="Barrio Alalay">Barrio Alalay</option>
+                <option value="Barrio Cosmos">Barrio Cosmos</option>
+                <option value="Barrio Pagador">Barrio Pagador</option>
+                <option value="Barrio Petrolero">Barrio Petrolero</option>
+                <option value="Barrio Punata">Barrio Punata</option>
+                <option value="Barrio Los Angeles">Barrio Los Angeles</option>
+                <option value="Barrio Siglo XX">Barrio Siglo XX</option>
+            </select>
+
+            <label for="request_type">Tipo de Solicitud</label>
+            <input type="text" id="request_type" name="request_type"
+                   placeholder="Ingresa el tipo de solicitud"
+                   required minlength="2" maxlength="100">
+
+            <label for="description">Descripcion de la Solicitud</label>
+            <textarea id="description" name="description"
+                      placeholder="Ingresa una descripcion detallada de tu solicitud"
+                      required minlength="5" maxlength="2000"></textarea>
+        </form>
+
+        <section>
+            <p id="form-message" role="status"></p>
+            <button id="boton-request" type="submit" form="request-form">Enviar Solicitud</button>
+        </section>
+        </main>
+
+        <footer>
+            <small>&copy; 2023 Web Request Portal. Todos los derechos reservados.</small>
+        </footer>
+    </body>
+</html>

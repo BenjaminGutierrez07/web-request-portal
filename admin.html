@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitudes | Web Request Portal</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script defer src="./supabase-client.js"></script>
+    <script defer src="./admin.js"></script>
+</head>
+<body>
+    <header>
+        <h2>Web Request Portal</h2>
+        <nav class="nav-bar">
+            <a href="index.html">Home</a>
+            <button type="button" id="logout-button">Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <main class="admin-content">
+        <section>
+            <h1>Solicitudes recibidas</h1>
+            <p id="admin-message" role="status">Cargando solicitudes...</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Nombre</th>
+                            <th>WhatsApp</th>
+                            <th>Barrio</th>
+                            <th>Tipo</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="request-list"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <small>&copy; 2026 Web Request Portal. Todos los derechos reservados.</small>
+    </footer>
+</body>
+</html>
