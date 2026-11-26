@@ -15,6 +15,7 @@ create table public.requests (
 );
 
 -- Layer 1, privileges: what each role may do AT ALL
+
 grant insert on public.requests to anon, authenticated;
 grant select, update on public.requests to authenticated;
 

@@ -8,19 +8,19 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script defer src="./supabase-client.js"></script>
     <script defer src="./admin.js"></script>
+    <link rel="icon" type="image/png" href="./logo.jpg">
 </head>
 <body>
     <header>
         <h2>Web Request Portal</h2>
         <nav class="nav-bar">
-            <a href="index.html">Home</a>
             <button type="button" id="logout-button">Cerrar sesión</button>
         </nav>
     </header>
 
     <main class="admin-content">
         <section>
-            <h1>Solicitudes recibidas</h1>
+            <h1>Solicitudes Recibidas</h1>
             <p id="admin-message" role="status">Cargando solicitudes...</p>
 
             <div class="table-wrapper">
@@ -34,6 +34,7 @@
                             <th>Tipo</th>
                             <th>Descripción</th>
                             <th>Estado</th>
+                            <th>Acciónes</th>
                         </tr>
                     </thead>
                     <tbody id="request-list"></tbody>

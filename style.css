@@ -249,3 +249,15 @@ th {
 td select {
     width: auto;
 }
+.btn-borrar {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-borrar:hover {
+    background: #b52b27;
+}

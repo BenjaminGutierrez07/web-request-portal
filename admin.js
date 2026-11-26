@@ -59,6 +59,12 @@ function buildRow(request) {
     statusCell.appendChild(buildStatusSelect(request));
     row.appendChild(statusCell);
 
+    const actionCell = document.createElement("td");
+    if (request.status === "resuelta") {
+        actionCell.appendChild(buildDeleteButton(request));
+    }
+    row.appendChild(actionCell);
+
     return row;
 }
 
@@ -98,7 +104,42 @@ async function updateStatus(id, newStatus, select) {
     }
 
     adminMessage.textContent = "";
-    select.disabled = false;
+    loadRequests();
+}
+
+function buildDeleteButton(request) {
+    const button = document.createElement("button");
+    button.textContent = "🗑️ Borrar";
+    button.className = "btn-borrar";
+
+    button.addEventListener("click", function () {
+        deleteRequest(request.id, button);
+    });
+
+    return button;
+}
+
+async function deleteRequest(id, button) {
+    const sure = confirm("¿Seguro que quieres borrar esta solicitud? No se puede deshacer.");
+    if (!sure) return;
+
+    button.disabled = true;
+
+    const { data, error } = await db
+        .from("requests")
+        .delete()
+        .eq("id", id)
+        .select();
+
+    if (error || data.length === 0) {
+        console.error(error);
+        adminMessage.textContent = "No se pudo borrar la solicitud.";
+        button.disabled = false;
+        return;
+    }
+
+    adminMessage.textContent = "";
+    loadRequests();
 }
 
 
