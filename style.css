@@ -69,6 +69,10 @@ section {
     display: flex;
     justify-content: space-around;
 }
+.submit-request, .view-requests {
+    text-decoration: none;
+    color: var(--text-primary);
+}
 
 .submit-request svg, .view-requests svg{
     width: 50px;
